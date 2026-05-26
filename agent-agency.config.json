@@ -1,0 +1,46 @@
+{
+  "description": "Agent-Agency: inject specialist roles into Claude Code sub-agents. Each role file lives in ~/.agent-agency/roles/. See README for full docs.",
+
+  "namespace_rules": {
+    "gsd-executor": [
+      { "file": "engineering/frontend-developer.md", "priority": "primary" },
+      { "file": "engineering/git-workflow-master.md", "priority": "secondary" },
+      { "file": "engineering/minimal-change-engineer.md", "priority": "secondary" }
+    ],
+    "gsd-planner": [
+      { "file": "engineering/software-architect.md", "priority": "primary" },
+      { "file": "design/ux-researcher.md", "priority": "secondary" }
+    ],
+    "gsd-code-reviewer": [
+      { "file": "engineering/code-reviewer.md", "priority": "primary" },
+      { "file": "engineering/security-engineer.md", "priority": "secondary" }
+    ],
+    "gsd-verifier": [
+      { "file": "testing/test-results-analyzer.md", "priority": "primary" },
+      { "file": "project/senior-manager.md", "priority": "secondary" }
+    ]
+  },
+
+  "keyword_rules": {
+    "test,spec,qa": [
+      { "file": "testing/qa-engineer.md", "priority": "primary" }
+    ],
+    "security,audit,vulnerability": [
+      { "file": "engineering/security-engineer.md", "priority": "primary" }
+    ],
+    "design,ui,css,layout": [
+      { "file": "design/ui-designer.md", "priority": "primary" },
+      { "file": "design/ux-architect.md", "priority": "secondary" }
+    ],
+    "database,sql,migration": [
+      { "file": "engineering/database-optimizer.md", "priority": "primary" }
+    ],
+    "devops,deploy,ci,cd,docker": [
+      { "file": "engineering/devops-automator.md", "priority": "primary" }
+    ]
+  },
+
+  "default_roles": [
+    { "file": "engineering/minimal-change-engineer.md", "priority": "secondary" }
+  ]
+}
